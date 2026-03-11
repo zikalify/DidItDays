@@ -51,24 +51,26 @@ h1 {
 }
 
 #add-btn {
-    background-color: var(--primary-color);
-    color: white;
+    background: none;
+    color: var(--primary-color);
     border: none;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    font-size: 2rem;
+    font-size: 2.5rem;
     cursor: pointer;
-    box-shadow: 0 4px 10px rgba(255, 77, 109, 0.3);
     transition: transform 0.2s;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 0;
+    margin-left: 10px;
 }
 
 #add-btn span {
     position: relative;
-    top: -2px; /* Nudge up by 2 pixels */
+    top: -2px; /* Slight adjustment for visual centering with title */
+}
+
+#add-btn:active {
+    transform: scale(0.9);
 }
 
 #calendar-container {
@@ -148,6 +150,10 @@ h1 {
 .day.selected {
     background-color: var(--primary-color) !important;
     color: white;
+}
+
+.day.selected.has-event::after {
+    background-color: white;
 }
 
 .day.other-month {
