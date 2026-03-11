@@ -42,7 +42,7 @@ function renderCalendar() {
     // Previous month days
     for (let i = firstDayOfMonth - 1; i >= 0; i--) {
         const day = daysInPrevMonth - i;
-        const div = createDayElement(day, 'other-month', new Date(year, month - 1, day));
+        const div = createDayElement(day, 'day other-month', new Date(year, month - 1, day));
         calendarDays.appendChild(div);
     }
     
@@ -62,7 +62,7 @@ function renderCalendar() {
     const totalDaysShown = firstDayOfMonth + daysInMonth;
     const nextMonthDays = (Math.ceil(totalDaysShown / 7) * 7) - totalDaysShown;
     for (let i = 1; i <= nextMonthDays; i++) {
-        const div = createDayElement(i, 'other-month', new Date(year, month + 1, i));
+        const div = createDayElement(i, 'day other-month', new Date(year, month + 1, i));
         calendarDays.appendChild(div);
     }
 }
