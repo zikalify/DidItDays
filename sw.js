@@ -1,4 +1,4 @@
-const CACHE_NAME = 'did-it-days-v5';
+const CACHE_NAME = 'did-it-days-v6';
 const ASSETS = [
   './',
   './index.html',
@@ -25,7 +25,7 @@ self.addEventListener('activate', event => {
         keys.filter(key => key !== CACHE_NAME)
           .map(key => caches.delete(key))
       );
-    })
+    }).then(() => self.clients.claim()) // Claim clients immediately
   );
 });
 
